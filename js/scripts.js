@@ -6,8 +6,10 @@ var input = '';
 var vowels = ['a','e','i','o','u'];
 
 var translate = function(words) {
+  if (Number.isInteger(parseInt(words))) {
+    alert("Please input words, not numbers!!")
+} else {
   inputArray = words.split("");
-
   for (var i = 0; i < inputArray.length; i++) {
     if (vowels.indexOf(inputArray[0]) === -1) {
       var consonant = inputArray[0];
@@ -25,6 +27,7 @@ var translate = function(words) {
   }
   inputArray.push("ay");
   translation = inputArray.join("");
+}
 };
 
 
