@@ -23,6 +23,8 @@ Run in browser of your choice._
 | word that begins with y | yellow | return "ellowyay"
 | words that begin with "qu" | quiet| return "ietquay"
 | words that begin with consonant and "qu" | squeal | return "ealsquay"
+| distinguish whether it is a number | 49 | "Please enter a statement"
+| deal with multiple words | hello there | "ellohay erethay"
 
 ## Known Bugs
 
