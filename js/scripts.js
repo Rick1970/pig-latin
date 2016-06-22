@@ -2,6 +2,7 @@
 
 var inputArray = [];
 var translation = '';
+var resultsArray = [];
 var input = '';
 var vowels = ['a','e','i','o','u'];
 
@@ -9,7 +10,9 @@ var translate = function(words) {
   if (Number.isInteger(parseInt(words))) {
     alert("Please input words, not numbers!!")
 } else {
-  inputArray = words.split("");
+  var wordsArray = words.split(" ");
+  wordsArray.forEach(function(word) {
+  inputArray = word.split("");
   for (var i = 0; i < inputArray.length; i++) {
     if (vowels.indexOf(inputArray[0]) === -1) {
       var consonant = inputArray[0];
@@ -23,13 +26,19 @@ var translate = function(words) {
        }
     } else {
       break;
+
     }
   }
   inputArray.push("ay");
-  translation = inputArray.join("");
-}
-};
 
+
+
+  translation = inputArray.join("");
+  resultsArray.push(translation);
+  console.log(translation);
+})
+};
+};
 
 // jQuery user interface logic here.
 $(document).ready(function() {
@@ -37,6 +46,6 @@ $(document).ready(function() {
     event.preventDefault();
     var input = $("input#words").val();
     translate(input);
-    console.log(translation);
+    console.log(resultsArray);
   });
 });
