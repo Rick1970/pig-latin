@@ -14,8 +14,14 @@ var translate = function(words) {
         inputArray[0] !== vowels[3] &&
         inputArray[0] !== vowels[4]) {
       var consonant = inputArray[0];
-      inputArray.push(consonant);
-      inputArray.shift();
+       if ((consonant === 'q') && (inputArray[1] === 'u')) {
+         inputArray.push(consonant + inputArray[1]);
+         inputArray.shift();
+         inputArray.shift();
+       } else {
+         inputArray.push(consonant);
+         inputArray.shift();
+       }
     } else {
       break;
     }
