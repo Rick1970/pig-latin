@@ -4,7 +4,7 @@ var inputArray = [];
 var translation = '';
 var resultsArray = [];
 var input = '';
-var vowels = ['a','e','i','o','u'];
+// var vowels = ['a','e','i','o','u'];
 
 var translate = function(words) {
   if (Number.isInteger(parseInt(words))) {
@@ -14,7 +14,7 @@ var translate = function(words) {
   wordsArray.forEach(function(word) {
   inputArray = word.split("");
   for (var i = 0; i < inputArray.length; i++) {
-    if (vowels.indexOf(inputArray[0]) === -1) {
+    if (inputArray[0].search(/(a|e|i|o|u)/i) === -1) {
       var consonant = inputArray[0];
        if ((consonant === 'q') && (inputArray[1] === 'u')) {
          inputArray.push(consonant + inputArray[1]);
